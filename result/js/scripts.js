@@ -40,6 +40,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
       return;
     }
     if (linkClick) {
+      event.preventDefault();
       let card = event.target.closest('.feed-card');
       card.classList.add('feed-card--active');
     }
