@@ -1,0 +1,56 @@
+:root {
+  font-size: $rem-size * 1px;
+  height: 100%;
+}
+
+[class*="__container"] {
+  max-width: calc($width-container / $rem-size) * 1rem;  
+  margin: auto;
+  width: 100%;
+  padding: 0 calc($padding-container / $rem-size) * 1rem;  
+  @media screen and (max-width: $xs-mob-width) {
+    padding: 0 calc($padding-container-mob / $rem-size) * 1rem;
+  }
+}
+
+body.scroll-lock {
+  position: fixed;
+	left: 0;
+	width: 100%;
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+.wrapper-global {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  //flex: 1 1 auto;
+}
+body.scroll-lock .wrapper-global {
+  overflow-y: scroll;
+}
+
+.picture-cover {
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  color: #1698D9;
+  &:hover {
+    text-decoration: none;
+  }
+}

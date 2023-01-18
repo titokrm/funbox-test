@@ -1,0 +1,296 @@
+body {
+  font-size: 1rem;
+  min-height: 100%;
+  font-family: $default-font;
+  background: url("../../images/bg.png") repeat center;
+  background-size: cover;
+  color: #fff;
+  background-color: #000;
+  font-weight: normal;
+  font-style: normal;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fed-cat {
+  flex: 1 1 auto;
+  display: flex;
+  &__container {
+  }
+
+  &__title {
+    font-size: calc(36 / $rem-size) * 1rem;
+    line-height: calc((44 / 36) * 1em);
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+    margin-top: calc(24 / $rem-size) * 1rem;
+    font-family: $exo2-font;
+  }
+
+  &__cards-wrapper {
+    display: flex;
+    justify-content: center;    
+    flex-wrap: wrap;
+    margin-bottom: calc(24 / $rem-size) * 1rem;
+  }
+
+  &__card {
+    margin: calc(24 / $rem-size) * 1rem calc(40 / $rem-size) * 1rem 0;    
+    @media screen and (max-width: $xs-mob-width) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+.feed-card {
+  width: calc(320 / $rem-size) * 1rem;
+  padding-top: calc(45 / $rem-size) * 1rem;
+  &__slogan-text {
+    display: none;
+    &--default {
+      display: block;
+    }
+  }
+
+  &__bg {
+    min-height: calc(435 / $rem-size) * 1rem;
+    padding: 1px calc(50 / $rem-size) * 1rem;
+    position: relative;
+    font-style: normal;
+    padding-bottom: calc(270 / $rem-size) * 1rem;
+    color: #000;
+    background-color: #F2F2F2;
+    border: calc(4 / $rem-size) * 1rem  solid #1698D9;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0 0 calc(12 / $rem-size) * 1rem calc(12 / $rem-size) * 1rem;
+    cursor: pointer;
+//    overflow: hidden;
+    * {
+      position: relative;
+      z-index: 5;      
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      height: calc(46 / $rem-size) * 1rem;
+      left: calc(-4 / $rem-size) * 1rem;
+      right: calc(-4 / $rem-size) * 1rem;
+      top: calc(-45 / $rem-size) * 1rem;
+      background: url("../images/bg-card.png") no-repeat center top;
+      background-size: 100% auto;
+      z-index: 1;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: calc(-4 / $rem-size) * 1rem;
+      right: calc(-4 / $rem-size) * 1rem;
+      bottom: calc(-4 / $rem-size) * 1rem;
+      height: calc(270 / $rem-size) * 1rem;
+      border: calc(4 / $rem-size) * 1rem  solid #1698D9;
+      border-top: none;
+      border-radius: 0 0 calc(12 / $rem-size) * 1rem calc(12 / $rem-size) * 1rem;
+      z-index: 7;
+    }
+  }
+
+  &__slogan {
+    font-size: calc(16 / $rem-size) * 1rem;
+    color: #666666;
+    font-weight: normal;
+    margin-bottom: calc(5 / $rem-size) * 1rem;
+    margin-top: calc(-24 / $rem-size) * 1rem;
+    line-height: calc((19 / 16) * 1em);
+  }
+
+  &__name {
+    font-size: calc(48 / $rem-size) * 1rem;
+    line-height: calc((56 / 48) * 1em);
+    font-weight: 700;
+  }
+
+  &__subname {
+    font-size: calc(24 / $rem-size) * 1rem;
+    line-height: calc((28 / 24) * 1em);
+    font-weight: 700;
+    margin-bottom: calc(15 / $rem-size) * 1rem;
+  }
+
+  &__text {
+    font-size: calc(14 / $rem-size) * 1rem;
+    line-height: calc((16 / 14) * 1em);
+    font-weight: normal;
+    color: #666666;
+    margin-bottom: calc(16 / $rem-size) * 1rem;
+  }
+
+  &__description {
+    margin-top: calc(14 / $rem-size) * 1rem;
+    text-align: center;
+  }
+
+  &__description-text {
+    text-align: center;
+    font-size: calc(13 / $rem-size) * 1rem;
+    line-height: calc((15 / 13) * 1em);
+    font-weight: normal;
+    a {
+      font-weight: bold;
+    }
+
+   &--default {
+   }
+
+   &--active {
+    display: none;
+   }
+
+   &--disabled {
+    display: none;
+   }
+  }
+  &__picture {
+    position: absolute;
+    left: calc(-4 / $rem-size) * 1rem;
+    bottom: calc(-4 / $rem-size) * 1rem;
+    height: calc(272 / $rem-size) * 1rem;
+    border-radius: 0 0 calc(12 / $rem-size) * 1rem calc(12 / $rem-size) * 1rem;
+    z-index: 2;
+  }
+
+  &__weight {
+    position: absolute;
+    right: calc(12 / $rem-size) * 1rem;
+    bottom: calc(12 / $rem-size) * 1rem;
+    width: calc(80 / $rem-size) * 1rem;
+    height: calc(80 / $rem-size) * 1rem;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(21 / $rem-size) * 1rem;
+    line-height: calc((22 / 21) * 1em);    
+    background-color: #1698D9;
+    padding-top: calc(4 / $rem-size) * 1rem;
+  }
+
+  &__weight-num {
+    font-size: calc(42 / $rem-size) * 1rem;
+    line-height: .9em;
+  }
+}
+
+.feed-card--hover {
+  .feed-card__bg {
+    border-color: #2EA8E6;
+    &:before {
+      background-position: center calc(-47.5 / $rem-size) * 1rem;
+    }
+    &:after {
+      border-color: #2EA8E6;
+    }
+  }
+  .feed-card__weight {
+    background-color: #2EA8E6;
+  }
+  .feed-card__description-text {
+    a {
+      color: #22a7e9;
+    }
+  }
+}
+
+.feed-card--active {
+  .feed-card__bg {
+    border-color: #D91667;
+    &:before {
+      background-position: center calc(-95 / $rem-size) * 1rem;
+    }
+    &:after {
+      border-color: #D91667;
+    }
+  }
+  .feed-card__weight {
+    background-color: #D91667;
+  }
+  .feed-card__slogan-text {
+    &--active {
+      display: block;
+      color: #E62E7A;
+    }
+    &--default {
+      display: none;
+    }
+  }
+  .feed-card__description-text--active {
+    display: inline;
+  }
+  .feed-card__description-text--default {
+    display: none;
+  }
+}
+
+.feed-card--active.feed-card--hover {
+  .feed-card__bg {
+    border-color: #E52E7A;
+    &:before {
+      background-position: center calc(-142.5 / $rem-size) * 1rem;
+    }
+    &:after {
+      border-color: #E52E7A;
+    }
+  }
+  .feed-card__weight {
+    background-color: #E52E7A;
+  }
+  .feed-card__slogan-text {
+    &--active {
+      display: block;
+      color: #E62E7A;
+    }
+    &--default {
+      display: none;
+    }
+  }
+}
+
+.feed-card--disabled {
+  .feed-card__bg {
+    border-color: #B3B3B3;
+    cursor: default;
+    &:before {
+      background-position: center calc(-190 / $rem-size) * 1rem;
+    }
+    &:after {
+      border-color: #B3B3B3;
+    }
+  }
+  .feed-card__slogan-text {
+    &--default {
+      display: block;
+    }
+  }
+  .feed-card__slogan-text, .feed-card__name, .feed-card__subname, .feed-card__text, .feed-card__picture {
+    opacity: .5;
+    color: #B3B3B3;
+  }
+  .feed-card__weight {
+    background-color: #B3B3B3;
+  }
+  .feed-card__description-text--disabled {
+    display: inline;
+    color: #FFFF66;
+  }
+  .feed-card__description-text--default {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $desk-sm-width) {
+
+}
